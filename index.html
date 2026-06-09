@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>SPINE — Monthly Transmission</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#020913;
+  --text:#eef9ff;
+  --muted:#8faec2;
+
+  --blue-100:#eef9ff;
+  --blue-200:#d9f3ff;
+  --blue-300:#bae7ff;
+  --blue-400:#90d8ff;
+
+  --border:#173548;
+  --glow:#90d8ff;
+
+  --max:720px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Sora",sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(144,216,255,.12), transparent 40%),
+    linear-gradient(to bottom, #03101c, var(--bg));
+  color:var(--text);
+  min-height:100vh;
+}
+
+.container{
+  width:min(100%, var(--max));
+  margin:auto;
+  padding:40px 20px 80px;
+}
+
+
+header{
+  margin-bottom:70px;
+}
+
+.logo{
+  font-size:clamp(3.5rem,11vw,6.5rem);
+  font-weight:700;
+  letter-spacing:-0.08em;
+  color:var(--blue-100);
+}
+
+.tagline{
+  margin-top:14px;
+  font-size:.85rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--blue-300);
+}
+
+.month{
+  margin-top:12px;
+  font-size:.8rem;
+  color:var(--muted);
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+
+.book{
+  margin-bottom:60px;
+}
+
+.cover-wrap{
+  position:relative;
+  margin-bottom:22px;
+}
+
+.cover-wrap::before{
+  content:"";
+  position:absolute;
+  inset:12%;
+  background:var(--glow);
+  opacity:.15;
+  filter:blur(70px);
+}
+
+.cover{
+  width:100%;
+  display:block;
+  border:1px solid var(--border);
+  position:relative;
+  z-index:2;
+  background:#000;
+}
+
+.title{
+  font-size:1.4rem;
+  font-weight:600;
+  line-height:1.2;
+}
+
+.author{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.buy{
+  display:inline-block;
+  margin-top:22px;
+  padding:12px 16px;
+
+  border:1px solid var(--blue-400);
+  color:var(--blue-200);
+
+  text-decoration:none;
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  transition:.2s ease;
+}
+
+.buy:hover{
+  background:var(--blue-400);
+  color:var(--bg);
+}
+
+
+@media(min-width:768px){
+  .book{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:36px;
+    align-items:start;
+  }
+
+  .cover-wrap{
+    margin-bottom:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1 class="logo">SPINE</h1>
+    <div class="tagline">Two Books. Every Month.</div>
+    <div class="month">June 2026</div>
+  </header>
+  <section class="book">
+
+    <div class="cover-wrap">
+      <img class="cover" src="vitamin-p.jpg" alt="Vitamin P cover">
+    </div>
+
+    <div>
+      <h2 class="title">Vitamin P: New Perspectives in Painting</h2>
+      <p class="author">Barry Schwabsky (ed.) — Phaidon</p>
+
+      <a class="buy"
+         href="https://www.amazon.com/s?k=Vitamin+P+New+Perspectives+in+Painting"
+         target="_blank">
+        Get Copy →
+      </a>
+    </div>
+
+  </section>
+
+  <section class="book">
+
+    <div class="cover-wrap">
+      <img class="cover" src="vitamin-p2.jpg" alt="Vitamin P2 cover">
+    </div>
+
+    <div>
+      <h2 class="title">Vitamin P2: New Perspectives in Painting</h2>
+      <p class="author">Barry Schwabsky (ed.) — Phaidon</p>
+
+      <a class="buy"
+         href="https://www.amazon.com/s?k=Vitamin+P2+New+Perspectives+in+Painting"
+         target="_blank">
+        Get Copy →
+      </a>
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
