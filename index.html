@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SPINE — Monthly Transmission</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+
     <style>
       :root {
         --bg: #020913;
-        --text: #eef9ff; 
+        --text: #eef9ff;
         --muted: #8faec2;
         --blue-100: #eef9ff;
         --blue-200: #d9f3ff;
@@ -30,7 +35,11 @@
       body {
         font-family: "Sora", sans-serif;
         background:
-          radial-gradient(circle at top, rgba(144, 216, 255, .12), transparent 40%),
+          radial-gradient(
+            circle at top,
+            rgba(144, 216, 255, .12),
+            transparent 40%
+          ),
           linear-gradient(to bottom, #03101c, var(--bg));
         color: var(--text);
         min-height: 100vh;
@@ -70,12 +79,17 @@
       }
 
       .book {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 28px;
+        align-items: start;
         margin-bottom: 60px;
       }
 
       .cover-wrap {
         position: relative;
-        margin-bottom: 22px;
+        width: 120px;
+        margin-bottom: 0;
       }
 
       .cover-wrap::before {
@@ -84,11 +98,12 @@
         inset: 12%;
         background: var(--glow);
         opacity: .15;
-        filter: blur(70px);
+        filter: blur(35px);
       }
 
       .cover {
-        width: 100%;
+        width: 120px;
+        height: auto;
         display: block;
         border: 1px solid var(--border);
         position: relative;
@@ -126,83 +141,110 @@
         color: var(--bg);
       }
 
-      @media(min-width:768px) {
+      @media (max-width: 480px) {
+        .container {
+          padding: 30px 18px 70px;
+        }
+
+        header {
+          margin-bottom: 55px;
+        }
+
         .book {
-          display: grid;
-          grid-template-columns: 260px 1fr;
-          gap: 36px;
-          align-items: start;
+          grid-template-columns: 90px 1fr;
+          gap: 20px;
+          margin-bottom: 50px;
         }
 
         .cover-wrap {
-          margin-bottom: 0;
+          width: 90px;
+        }
+
+        .cover {
+          width: 90px;
+          height: auto;
+        }
+
+        .title {
+          font-size: 1.05rem;
+        }
+
+        .author {
+          font-size: .82rem;
+        }
+
+        .buy {
+          margin-top: 18px;
+          padding: 10px 12px;
+          font-size: .68rem;
         }
       }
     </style>
   </head>
+
   <body>
     <div class="container">
+
       <header>
         <h1 class="logo">SPINE</h1>
         <div class="tagline">Two Books. Every Month.</div>
-        <div class="month">August 2026</div>
-    <header>
-<br>
-<section class="book">
-  <div class="cover-wrap">
-    <img
-      class="cover"
-      src="https://upload.wikimedia.org/wikipedia/en/4/4b/Neuromancer_%28Book%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20170602001714"
-      alt="Neuromancer cover"
-    >
-  </div>
+        <div class="month">September 2026</div>
+      </header>
 
-  <div>
-    <h2 class="title">Neuromancer</h2>
+      <section class="book">
+        <div class="cover-wrap">
+          <img
+            class="cover"
+            src="https://covers.openlibrary.org/b/isbn/047105463X-L.jpg"
+            alt="An Introduction to Cybernetics by W. Ross Ashby"
+          >
+        </div>
 
-    <div class="author">
-      William Gibson
-    </div>
+        <div>
+          <h2 class="title">An Introduction to Cybernetics</h2>
 
-    <a
-      class="buy"
-      href="https://www.are.na/block/962990"
-      target="_blank"
-      rel="noopener"
-    >
-      Find a Copy → 
-    </a>
-  </div>
-</section>
+          <div class="author">
+            W. Ross Ashby
+          </div>
 
-<section class="book">
-  <div class="cover-wrap">
-    <img
-      class="cover"
-      src="https://upload.wikimedia.org/wikipedia/en/d/d1/Haruki_murakami_hardboiled_9780679743460.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-      alt="Hard-Boiled Wonderland and the End of the World cover"
-    >
-  </div>
+          <a
+            class="buy"
+            href="https://openlibrary.org/books/OL6202924M/An_introduction_to_cybernetics"
+            target="_blank"
+            rel="noopener"
+          >
+            Read Online →
+          </a>
+        </div>
+      </section>
 
-  <div>
-    <h2 class="title">
-      Hard-Boiled Wonderland and the End of the World
-    </h2>
+      <section class="book">
+        <div class="cover-wrap">
+          <img
+            class="cover"
+            src="https://www.gutenberg.org/cache/epub/71292/pg71292.cover.medium.jpg"
+            alt="The Calculating Engine by Charles Babbage"
+          >
+        </div>
 
-    <div class="author">
-      Haruki Murakami
-    </div>
+        <div>
+          <h2 class="title">The Calculating Engine</h2>
 
-    <a
-      class="buy"
-      href="http://123.200.31.10:8080/jspui/bitstream/123456789/378/1/Haruki%20Murakami%20-%20Hardboiled%20Wonderland%20and%20the%20End%20of%20the%20World%20(2010).pdf"
-      target="_blank"
-      rel="noopener"
-    >
-      Find a Copy → 
-    </a>
-  </div>
-</section>
+          <div class="author">
+            Charles Babbage
+          </div>
+
+          <a
+            class="buy"
+            href="https://www.gutenberg.org/ebooks/71292"
+            target="_blank"
+            rel="noopener"
+          >
+            Read Online →
+          </a>
+        </div>
+      </section>
+
     </div>
   </body>
 </html>
